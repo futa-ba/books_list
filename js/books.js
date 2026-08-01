@@ -73,7 +73,9 @@ keyword.addEventListener(
 
 
     const text =
-        keyword.value.toLowerCase();
+        keyword.value
+        .trim()
+        .toLowerCase();
 
 
 
@@ -81,30 +83,33 @@ keyword.addEventListener(
         allBooks.filter(book=>{
 
 
+            const title =
+                String(book.タイトル || "")
+                .toLowerCase();
+
+
+            const author =
+                String(book.著者 || "")
+                .toLowerCase();
+
+
+            const category =
+                String(book.分類 || "")
+                .toLowerCase();
+
+
+
             return (
-
-                book.タイトル
-                .toLowerCase()
-                .includes(text)
-
-                ||
-
-                book.著者
-                .toLowerCase()
-                .includes(text)
-
+                title.includes(text) ||
+                author.includes(text) ||
+                category.includes(text)
             );
 
 
         });
 
 
-
     renderBooks(filtered);
 
 
 });
-
-
-
-loadBooks();
