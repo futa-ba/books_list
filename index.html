@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+
+<html lang="ja">
+
+<head>
+
+<meta charset="UTF-8">
+
+<title>図書一覧</title>
+
+<link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+
+<h1>所蔵図書一覧</h1>
+
+<input
+type="text"
+id="searchBox"
+placeholder="タイトルで検索">
+
+<table>
+
+<thead>
+
+<tr>
+
+<th>ID</th>
+
+<th>タイトル</th>
+
+<th>著者</th>
+
+<th>分類</th>
+
+<th>状態</th>
+
+</tr>
+
+</thead>
+
+<tbody id="bookBody">
+
+</tbody>
+
+</table>
+
+<script src="js/api.js"></script>
+
+<script src="js/books.js"></script>
+
+</body>
+
+</html>
