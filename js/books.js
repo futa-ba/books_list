@@ -1,5 +1,8 @@
 const API =
-"https://script.google.com/macros/s/AKfycbxN2inDXwjnuim7njt13V8L0Po_LC6nrHxLH0dw2-KMCeJ6p6ntSqrla8WLcmRxtDyMXQ/exec";
+"https://script.google.com/macros/s/あなたのURL/exec";
+
+
+let allBooks = [];
 
 
 function loadBooks(){
@@ -13,7 +16,18 @@ function loadBooks(){
 }
 
 
+
 function displayBooks(books){
+
+    allBooks = books;
+
+    renderBooks(allBooks);
+
+}
+
+
+
+function renderBooks(books){
 
 
     const tbody =
@@ -23,16 +37,21 @@ function displayBooks(books){
     tbody.innerHTML = "";
 
 
-    books.forEach(book=>{
+    books.forEach(book => {
 
 
         tbody.innerHTML += `
 
         <tr>
+
             <td>${book.ID}</td>
+
             <td>${book.タイトル}</td>
+
             <td>${book.著者}</td>
+
             <td>${book.状態}</td>
+
         </tr>
 
         `;
@@ -40,8 +59,52 @@ function displayBooks(books){
 
     });
 
-
 }
+
+
+
+const keyword =
+document.getElementById("keyword");
+
+
+keyword.addEventListener(
+"input",
+()=>{
+
+
+    const text =
+        keyword.value.toLowerCase();
+
+
+
+    const filtered =
+        allBooks.filter(book=>{
+
+
+            return (
+
+                book.タイトル
+                .toLowerCase()
+                .includes(text)
+
+                ||
+
+                book.著者
+                .toLowerCase()
+                .includes(text)
+
+            );
+
+
+        });
+
+
+
+    renderBooks(filtered);
+
+
+});
+
 
 
 loadBooks();
