@@ -1,5 +1,5 @@
 const API =
-"https://script.google.com/macros/s/あなたのURL/exec";
+"https://script.google.com/macros/s/AKfycbxN2inDXwjnuim7njt13V8L0Po_LC6nrHxLH0dw2-KMCeJ6p6ntSqrla8WLcmRxtDyMXQ/exec";
 
 
 let allBooks = [];
