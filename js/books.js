@@ -1,3 +1,5 @@
+console.log("books.js start");
+
 const API =
 "https://script.google.com/macros/s/AKfycbzkFmSxSPr4rH6n4GBlyXJKHijnXnjoldKWqI_a6HfF1y527tFFOvqCKTxq0Vu-g3AMzQ/exec";
 
