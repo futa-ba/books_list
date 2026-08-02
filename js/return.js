@@ -1,5 +1,5 @@
 const API =
-"https://script.google.com/macros/s/AKfycbzz5_U5QHJ-HaW74IJWB4H_t4KHTSaZFPBmiILsXCGp7bgahdJQtBPpYz10E_2ERePPEA/exec";
+"https://script.google.com/macros/s/AKfycbxcV3V1dVrwK21Fv4w57dwrofXCKm0vCWcuOvnjNo9781DWbX2hyb_Hw_Ao6-wWmWX2Vg/exec";
 
 
 async function searchBooks(){
@@ -84,6 +84,38 @@ onclick="returnBook('${book[3]}')">
 
 
 });
+
+
+}
+
+
+
+async function returnBook(bookId){
+
+
+const response =
+await fetch(
+
+API
++
+"?action=returnBook&bookId="
++
+encodeURIComponent(bookId)
+
+);
+
+
+
+const result =
+await response.text();
+
+
+
+alert(result);
+
+
+
+location.reload();
 
 
 }
