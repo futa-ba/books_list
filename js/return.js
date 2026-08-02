@@ -61,13 +61,37 @@ tbody.innerHTML += `
 
 <tr>
 
-<td>${book[3]}</td>
 
-<td>${book[4]}</td>
+<td data-label="図書ID">
 
-<td>${book[5]}</td>
+${book[3]}
 
-<td>
+</td>
+
+
+
+<td data-label="タイトル">
+
+${book[4]}
+
+</td>
+
+
+
+<td data-label="状態">
+
+<span class="status borrowed">
+
+${book[5]}
+
+</span>
+
+</td>
+
+
+
+<td data-label="返却">
+
 
 <button
 onclick="returnBook('${book[3]}')">
@@ -76,11 +100,17 @@ onclick="returnBook('${book[3]}')">
 
 </button>
 
+
 </td>
+
 
 </tr>
 
 `;
+
+
+
+});
 
 
 });
