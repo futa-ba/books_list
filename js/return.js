@@ -209,6 +209,21 @@ async function searchBooks(){
 async function returnBook(bookId){
 
 
+    const confirmResult =
+    confirm(
+        "この本を返却しますか？"
+    );
+
+
+
+    if(!confirmResult){
+
+        return;
+
+    }
+
+
+
 
     console.log(
         "返却ID:",
