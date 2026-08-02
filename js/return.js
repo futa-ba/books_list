@@ -69,8 +69,11 @@ tbody.innerHTML += `
 
 <td>
 
-<button>
+<button
+onclick="returnBook('${book[3]}')">
+
 返却
+
 </button>
 
 </td>
