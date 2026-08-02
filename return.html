@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+
+<meta charset="UTF-8">
+
+<title>返却</title>
+
+<link rel="stylesheet" href="css/style.css">
+
+</head>
+
+
+<body>
+
+
+<h1>返却申請</h1>
+
+
+<label>
+氏名
+</label>
+
+<br>
+
+<input 
+id="name"
+placeholder="氏名を入力">
+
+
+<button onclick="searchBooks()">
+検索
+</button>
+
+
+
+<h2>
+借りている本
+</h2>
+
+
+<table border="1">
+
+<thead>
+
+<tr>
+
+<th>タイトル</th>
+<th>返却</th>
+
+</tr>
+
+</thead>
+
+
+<tbody id="returnList">
+
+</tbody>
+
+
+</table>
+
+
+
+<script src="js/return.js"></script>
+
+
+</body>
+
+</html>
