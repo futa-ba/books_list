@@ -14,7 +14,7 @@ console.log("email element:", emailElement);
 
 if(!emailElement){
 
-    alert("メール入力欄が見つかりません");
+    alert("メール入力欄が見つかりません。");
 
     return;
 
