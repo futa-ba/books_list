@@ -9,28 +9,35 @@
 
 body {
 
-    margin: 0;
+    margin:0;
 
     font-family:
     "Hiragino Kaku Gothic ProN",
     "Yu Gothic",
     sans-serif;
 
-    background:
-    #f1f8e9;
+    background:#f1f8e9;
 
-    color: #333;
+    color:#333;
 
 }
 
 
 
+a {
+    text-decoration:none;
+}
+
+
+
 /* ==========================
-   ヘッダー
+   ヘッダー共通
 ========================== */
 
 
-.home-header {
+.home-header,
+.page-header {
+
 
     background:
     linear-gradient(
@@ -39,17 +46,20 @@ body {
         #2e7d32
     );
 
+
     color:white;
 
     text-align:center;
 
     padding:
 
-    60px 20px 50px;
+    50px 20px;
+
 
     border-radius:
 
     0 0 50px 50px;
+
 
     box-shadow:
 
@@ -59,38 +69,35 @@ body {
 
 
 
-.home-header h1 {
+.home-header h1,
+.page-header h1 {
 
     margin:0;
 
-    font-size:36px;
-
-    letter-spacing:2px;
+    font-size:34px;
 
 }
 
 
 
-.home-header p {
+.home-header p,
+.page-header p {
 
-    margin-top:20px;
+    margin-top:15px;
 
-    font-size:18px;
-
-    opacity:0.95;
+    font-size:17px;
 
 }
-
-
 
 
 
 /* ==========================
-   メニューエリア
+   ホーム画面
 ========================== */
 
 
 .menu {
+
 
     display:flex;
 
@@ -109,13 +116,8 @@ body {
 
 
 
-
-/* ==========================
-   カード
-========================== */
-
-
 .card {
+
 
     background:white;
 
@@ -135,13 +137,9 @@ body {
     0 10px 25px rgba(46,125,50,0.15);
 
 
-    transition:
-
-    0.3s;
+    transition:.3s;
 
 }
-
-
 
 
 
@@ -152,71 +150,36 @@ body {
 
     translateY(-10px);
 
-
-    box-shadow:
-
-    0 15px 35px rgba(46,125,50,0.25);
-
-
 }
 
 
-
-
-/* アイコン */
 
 .icon {
 
     font-size:60px;
 
-    margin-bottom:20px;
-
 }
 
 
-
-
-
-/* タイトル */
 
 .card h2 {
 
 
     color:#2e7d32;
 
-    font-size:24px;
-
-    margin-bottom:20px;
-
-
 }
 
 
 
-
-
-/* 説明文 */
-
 .card p {
-
 
     line-height:1.8;
 
     color:#555;
 
-    font-size:15px;
-
-
 }
 
 
-
-
-
-
-/* ==========================
-   ボタン
-========================== */
 
 
 .card a {
@@ -224,42 +187,21 @@ body {
 
     display:inline-block;
 
-
     margin-top:25px;
-
 
     padding:
 
     13px 35px;
 
 
-
-    background:
-
-    #43a047;
-
-
+    background:#43a047;
 
     color:white;
 
 
-    text-decoration:none;
-
-
-    border-radius:
-
-    30px;
-
-
+    border-radius:30px;
 
     font-weight:bold;
-
-
-
-    transition:
-
-    0.3s;
-
 
 }
 
@@ -269,19 +211,9 @@ body {
 .card a:hover {
 
 
-    background:
-
-    #1b5e20;
-
-
-    transform:
-
-    scale(1.05);
-
+    background:#1b5e20;
 
 }
-
-
 
 
 
@@ -294,12 +226,244 @@ body {
 footer {
 
 
-    background:
+    background:#1b5e20;
 
-    #1b5e20;
+    color:white;
+
+    text-align:center;
+
+    padding:20px;
+
+}
+
+
+
+/* ==========================
+   図書一覧ページ
+========================== */
+
+
+.search-area {
+
+
+    text-align:center;
+
+    padding:
+
+    30px 20px;
+
+}
+
+
+
+
+#keyword,
+#email {
+
+
+    width:70%;
+
+    max-width:500px;
+
+    padding:14px;
+
+
+    border:
+
+    2px solid #81c784;
+
+
+    border-radius:30px;
+
+
+    font-size:16px;
+
+}
+
+
+
+
+#bookTable,
+#returnTable {
+
+
+    width:90%;
+
+    margin:auto;
+
+
+    border-collapse:collapse;
+
+
+    background:white;
+
+
+    border-radius:20px;
+
+
+    overflow:hidden;
+
+
+    box-shadow:
+
+    0 8px 20px rgba(0,0,0,0.1);
+
+}
+
+
+
+
+#bookTable th,
+#returnTable th {
+
+
+    background:#43a047;
 
 
     color:white;
+
+
+    padding:15px;
+
+}
+
+
+
+
+#bookTable td,
+#returnTable td {
+
+
+    padding:15px;
+
+
+    text-align:center;
+
+
+    border-bottom:
+
+    1px solid #eee;
+
+}
+
+
+
+#bookTable tr:hover,
+#returnTable tr:hover {
+
+
+    background:#f1f8e9;
+
+}
+
+
+
+/* ==========================
+   状態表示
+========================== */
+
+
+.status {
+
+
+    padding:
+
+    6px 14px;
+
+
+    border-radius:20px;
+
+
+    font-weight:bold;
+
+
+}
+
+
+
+.available {
+
+
+    background:#c8e6c9;
+
+    color:#2e7d32;
+
+}
+
+
+
+.borrowed {
+
+
+    background:#ffcdd2;
+
+    color:#c62828;
+
+}
+
+
+
+
+/* ==========================
+   ボタン
+========================== */
+
+
+button {
+
+
+    background:#43a047;
+
+
+    color:white;
+
+
+    border:none;
+
+
+    padding:
+
+    10px 25px;
+
+
+    border-radius:30px;
+
+
+    cursor:pointer;
+
+
+    font-weight:bold;
+
+}
+
+
+
+button:hover {
+
+
+    background:#2e7d32;
+
+}
+
+
+
+
+.disabled {
+
+
+    color:#999;
+
+}
+
+
+
+
+/* ==========================
+   返却ページ
+========================== */
+
+
+.return-search {
 
 
     text-align:center;
@@ -307,24 +471,21 @@ footer {
 
     padding:
 
-    20px;
-
-
-}
-
-
-
-
-
-footer p {
-
-
-    margin:0;
-
+    40px 20px;
 
 }
 
 
+
+
+.return-area {
+
+
+    width:90%;
+
+    margin:auto;
+
+}
 
 
 
@@ -338,344 +499,56 @@ footer p {
 
 
 
-    .home-header h1 {
-
-        font-size:28px;
-
-    }
+.home-header h1,
+.page-header h1 {
 
 
-
-    .home-header p {
-
-        font-size:15px;
-
-    }
-
-
-
-    .menu {
-
-        padding:
-
-        40px 15px;
-
-    }
-
-
-
-    .card {
-
-        width:
-
-        90%;
-
-    }
-
-
-}
-
-/* =====================
-   図書一覧ページ
-===================== */
-
-
-.page-header{
-
-
-background:
-
-linear-gradient(
-135deg,
-#66bb6a,
-#2e7d32
-);
-
-
-color:white;
-
-text-align:center;
-
-padding:
-
-40px 20px;
-
-border-radius:
-
-0 0 40px 40px;
-
-
-}
-
-
-
-.page-header h1{
-
-margin:0;
-
-font-size:32px;
+    font-size:26px;
 
 }
 
 
 
 
-
-/* 検索 */
-
-.search-area{
-
-text-align:center;
-
-padding:
-
-30px 20px;
-
-}
+.menu {
 
 
+    padding:
 
-#keyword{
-
-
-width:
-
-70%;
-
-max-width:
-
-500px;
-
-
-padding:
-
-14px;
-
-
-border:
-
-2px solid #81c784;
-
-
-border-radius:
-
-30px;
-
-
-font-size:16px;
-
+    40px 15px;
 
 }
 
 
 
 
-
-/* 表 */
-
-#bookTable{
+.card {
 
 
-width:90%;
-
-margin:auto;
-
-
-border-collapse:collapse;
-
-
-background:white;
-
-
-border-radius:20px;
-
-
-overflow:hidden;
-
-
-box-shadow:
-
-0 8px 20px rgba(0,0,0,0.1);
-
-
-}
-
-
-
-#bookTable th{
-
-
-background:#43a047;
-
-
-color:white;
-
-
-padding:15px;
-
-
-}
-
-
-
-#bookTable td{
-
-
-padding:15px;
-
-
-text-align:center;
-
-
-border-bottom:
-
-1px solid #eee;
-
+    width:90%;
 
 }
 
 
 
 
-#bookTable tr:hover{
+#keyword,
+#email {
 
 
-background:#f1f8e9;
-
-
-}
-
-
-
-
-
-/* 状態 */
-
-.status{
-
-
-padding:
-
-6px 14px;
-
-
-border-radius:
-
-20px;
-
-
-font-size:14px;
-
-
-font-weight:bold;
-
-
-}
-
-
-
-.available{
-
-
-background:#c8e6c9;
-
-color:#2e7d32;
-
-
-}
-
-
-
-.borrowed{
-
-
-background:#ffcdd2;
-
-
-color:#c62828;
-
+    width:90%;
 
 }
 
 
 
 
-/* ボタン */
-
-#bookTable button{
+button {
 
 
-background:#4caf50;
+    width:90%;
 
-
-border:none;
-
-
-color:white;
-
-
-padding:
-
-10px 20px;
-
-
-border-radius:
-
-25px;
-
-
-cursor:pointer;
-
-
-}
-
-
-
-#bookTable button:hover{
-
-
-background:#2e7d32;
-
-
-}
-
-
-
-
-.disabled{
-
-
-color:#999;
-
-
-}
-
-
-
-
-
-/* =====================
-スマホ対応
-===================== */
-
-
-@media(max-width:600px){
-
-
-
-.page-header h1{
-
-font-size:26px;
-
-}
-
-
-
-#keyword{
-
-
-width:90%;
-
+    margin-top:15px;
 
 }
 
@@ -683,546 +556,101 @@ width:90%;
 
 
 #bookTable,
-#bookTable tbody,
-#bookTable tr,
-#bookTable td{
-
-
-display:block;
-
-
-}
-
-
-
-#bookTable thead{
-
-
-display:none;
-
-
-}
-
-
-
-#bookTable tr{
-
-
-margin:
-
-20px;
-
-
-background:white;
-
-
-border-radius:
-
-20px;
-
-
-box-shadow:
-
-0 5px 15px rgba(0,0,0,0.1);
-
-
-padding:
-
-10px;
-
-
-}
-
-
-
-#bookTable td{
-
-
-text-align:left;
-
-
-border:none;
-
-
-padding:
-
-10px 15px;
-
-
-}
-
-
-
-#bookTable td::before{
-
-
-content:
-
-attr(data-label);
-
-
-font-weight:bold;
-
-
-color:#2e7d32;
-
-
-display:block;
-
-
-margin-bottom:5px;
-
-
-}
-
-
-
-#bookTable button{
-
-
-width:100%;
-
-
-}
-
-/* ==========================
-   返却ページ
-========================== */
-
-
-.return-search{
-
-
-text-align:center;
-
-
-padding:
-
-40px 20px;
-
-
-}
-
-
-
-.return-search p{
-
-
-color:#555;
-
-
-font-size:16px;
-
-
-}
-
-
-
-
-
-#email{
-
-
-width:
-
-70%;
-
-
-max-width:
-
-450px;
-
-
-padding:
-
-14px;
-
-
-border:
-
-2px solid #81c784;
-
-
-border-radius:
-
-30px;
-
-
-font-size:16px;
-
-
-}
-
-
-
-
-
-.return-search button{
-
-
-margin-left:
-
-10px;
-
-
-padding:
-
-12px 30px;
-
-
-border:none;
-
-
-border-radius:
-
-30px;
-
-
-background:
-
-#43a047;
-
-
-color:white;
-
-
-font-weight:bold;
-
-
-cursor:pointer;
-
-
-}
-
-
-
-
-
-.return-search button:hover{
-
-
-background:
-
-#2e7d32;
-
-
-}
-
-
-
-
-
-/* 返却一覧 */
-
-.return-area{
-
-
-width:
-
-90%;
-
-
-margin:auto;
-
-
-}
-
-
-
-
-#returnTable{
-
-
-width:100%;
-
-
-border-collapse:collapse;
-
-
-background:white;
-
-
-border-radius:
-
-20px;
-
-
-overflow:hidden;
-
-
-box-shadow:
-
-0 8px 20px rgba(0,0,0,0.1);
-
-
-}
-
-
-
-
-
-#returnTable th{
-
-
-background:#43a047;
-
-
-color:white;
-
-
-padding:
-
-15px;
-
-
-}
-
-
-
-
-#returnTable td{
-
-
-padding:
-
-15px;
-
-
-text-align:center;
-
-
-border-bottom:
-
-1px solid #eee;
-
-
-}
-
-
-
-
-#returnTable tr:hover{
-
-
-background:#f1f8e9;
-
-
-}
-
-
-
-
-
-/* 返却ボタン */
-
-
-#returnTable button{
-
-
-background:#66bb6a;
-
-
-color:white;
-
-
-border:none;
-
-
-padding:
-
-10px 25px;
-
-
-border-radius:
-
-25px;
-
-
-cursor:pointer;
-
-
-font-weight:bold;
-
-
-}
-
-
-
-#returnTable button:hover{
-
-
-background:#2e7d32;
-
-
-}
-
-
-
-
-
-
-/* ==========================
-スマホ対応
-========================== */
-
-
-@media(max-width:600px){
-
-
-
-.return-search{
-
-
-padding:
-
-30px 15px;
-
-
-}
-
-
-
-
-#email{
-
-
-width:
-
-90%;
-
-
-}
-
-
-
-
-.return-search button{
-
-
-margin-top:
-
-15px;
-
-
-width:
-
-90%;
-
-
-}
-
-
-
-
-
 #returnTable,
+#bookTable tbody,
 #returnTable tbody,
+#bookTable tr,
 #returnTable tr,
-#returnTable td{
+#bookTable td,
+#returnTable td {
 
 
-display:block;
-
-
-}
-
-
-
-
-#returnTable thead{
-
-
-display:none;
-
+    display:block;
 
 }
 
 
 
 
-#returnTable tr{
+#bookTable thead,
+#returnTable thead {
 
 
-margin:
-
-20px;
-
-
-background:white;
-
-
-border-radius:
-
-20px;
-
-
-box-shadow:
-
-0 5px 15px rgba(0,0,0,0.1);
-
-
-padding:
-
-10px;
-
-
-}
-
-
-
-#returnTable td{
-
-
-text-align:left;
-
-
-border:none;
-
-
-padding:
-
-10px 15px;
-
+    display:none;
 
 }
 
 
 
 
-#returnTable td::before{
+
+#bookTable tr,
+#returnTable tr {
 
 
-content:
+    margin:
 
-attr(data-label);
-
-
-display:block;
+    20px;
 
 
-font-weight:bold;
+    background:white;
 
 
-color:#2e7d32;
+    border-radius:20px;
 
 
-margin-bottom:5px;
+    padding:10px;
 
+
+    box-shadow:
+
+    0 5px 15px rgba(0,0,0,0.1);
+
+}
+
+
+
+
+#bookTable td,
+#returnTable td {
+
+
+    text-align:left;
+
+    border:none;
+
+
+    padding:
+
+    10px 15px;
 
 }
 
 
 
-#returnTable button{
+
+#bookTable td::before,
+#returnTable td::before {
 
 
-width:100%;
+    content:
 
+    attr(data-label);
+
+
+    display:block;
+
+
+    font-weight:bold;
+
+
+    color:#2e7d32;
+
+
+    margin-bottom:5px;
 
 }
 
-
-}
 
 
 }
