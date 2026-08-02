@@ -33,11 +33,11 @@ const tbody =
 document.querySelector("#bookTable tbody");
 
 
-tbody.innerHTML="";
+tbody.innerHTML = "";
 
 
 
-books.forEach(book=>{
+books.forEach(book => {
 
 
 tbody.innerHTML += `
@@ -46,25 +46,25 @@ tbody.innerHTML += `
 
 
 <td data-label="ID">
-
 ${book.ID}
-
 </td>
 
 
 
 <td data-label="タイトル">
-
 ${book.タイトル}
-
 </td>
 
 
 
 <td data-label="著者">
-
 ${book.著者}
+</td>
 
+
+
+<td data-label="分類">
+${book.分類}
 </td>
 
 
@@ -80,12 +80,12 @@ ${book.状態}
 
 </span>
 
-
 </td>
 
 
 
-<td data-label="操作">
+
+<td data-label="貸出">
 
 
 ${
@@ -96,10 +96,7 @@ book.状態 === "貸出可"
 `
 
 <button
-
-onclick="requestBook('${book.ID}','${book.タイトル}')"
-
->
+onclick="requestBook('${book.ID}','${book.タイトル}')">
 
 貸出申請
 
@@ -112,9 +109,7 @@ onclick="requestBook('${book.ID}','${book.タイトル}')"
 `
 
 <span class="disabled">
-
 貸出中
-
 </span>
 
 `
