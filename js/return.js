@@ -2,24 +2,25 @@ const API =
 "https://script.google.com/macros/s/AKfycbzz5_U5QHJ-HaW74IJWB4H_t4KHTSaZFPBmiILsXCGp7bgahdJQtBPpYz10E_2ERePPEA/exec";
 
 
-
 async function searchBooks(){
 
 
-const name =
+const email =
 document
-.getElementById("name")
+.getElementById("email")
 .value;
 
 
 
 const response =
 await fetch(
+
 API
 +
-"?action=returnSearch&name="
+"?action=returnSearch&email="
 +
-encodeURIComponent(name)
+encodeURIComponent(email)
+
 );
 
 
@@ -35,7 +36,7 @@ document
 
 
 
-tbody.innerHTML = "";
+tbody.innerHTML="";
 
 
 
@@ -51,6 +52,14 @@ tbody.innerHTML += `
 <td>${book[4]}</td>
 
 <td>${book[5]}</td>
+
+<td>
+
+<button>
+返却
+</button>
+
+</td>
 
 </tr>
 
