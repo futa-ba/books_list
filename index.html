@@ -1,55 +1,94 @@
 <!DOCTYPE html>
-
 <html lang="ja">
 
 <head>
 
 <meta charset="UTF-8">
 
-<title>図書一覧</title>
+<title>図書館システム</title>
 
 <link rel="stylesheet" href="css/style.css">
 
 </head>
 
+
 <body>
 
-<h1>所蔵図書一覧</h1>
 
-<input
-type="text"
-id="searchBox"
-placeholder="タイトルで検索">
+<header>
 
-<table>
+<h1>
+📚 図書館システム
+</h1>
 
-<thead>
+<p>
+本の検索・貸出・返却ができます
+</p>
 
-<tr>
+</header>
 
-<th>ID</th>
 
-<th>タイトル</th>
 
-<th>著者</th>
+<main>
 
-<th>分類</th>
 
-<th>状態</th>
+<div class="menu">
 
-</tr>
 
-</thead>
+<div class="card">
 
-<tbody id="bookBody">
+<h2>
+📖 本を探す
+</h2>
 
-</tbody>
+<p>
+図書一覧から本を検索できます
+</p>
 
-</table>
+<a href="books.html">
+図書一覧へ
+</a>
 
-<script src="js/api.js"></script>
+</div>
 
-<script src="js/books.js"></script>
+
+
+
+<div class="card">
+
+<h2>
+🔄 本を返却する
+</h2>
+
+<p>
+メールアドレスから返却できます
+</p>
+
+
+<a href="return.html">
+返却ページへ
+</a>
+
+
+</div>
+
+
+
+</div>
+
+
+</main>
+
+
+<footer>
+
+<p>
+© 図書館システム
+</p>
+
+</footer>
+
+
 
 </body>
 
