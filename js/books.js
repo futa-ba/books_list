@@ -52,9 +52,21 @@ function renderBooks(books){
             <td>${book.状態}</td>
 
             <td>
-            <button onclick="requestBook('${book.ID}')">
-            貸出申請
-            </button>
+            <td>
+            ${
+                book.状態 === "貸出可"
+                ?
+                `
+                <button onclick="requestBook('${book.ID}','${book.タイトル}')">
+                貸出申請
+                </button>
+                `
+
+                :
+
+                "貸出中"
+
+            }
             </td>
 
         </tr>
@@ -140,13 +152,31 @@ function requestBook(id){
     const entryID =
     "entry.1432276930";
 
+    const titleEntry =
+    "entry.2068141398";
+
+    const url =
+        formURL
+        +
+        "?"
+        +
+        bookIdEntry
+        +
+        "="
+        +
+        id
+        +
+        "&"
+        +
+        titleEntry
+        +
+        "="
+        +
+        encodeURIComponent(title);
+
 
     window.open(
-        formURL
-        + "?"
-        + entryID
-        + "="
-        + id,
+        url,
         "_blank"
     );
 
