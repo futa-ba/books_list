@@ -1,10 +1,11 @@
 <!DOCTYPE html>
-
 <html lang="ja">
 
 <head>
 
 <meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>図書一覧</title>
 
@@ -12,38 +13,97 @@
 
 </head>
 
+
 <body>
 
-<h1>図書一覧</h1>
 
-<input 
+<header class="page-header">
+
+<h1>
+📚 図書一覧
+</h1>
+
+<p>
+読みたい本を探して貸出申請できます
+</p>
+
+</header>
+
+
+
+<main>
+
+
+<section class="search-area">
+
+
+<input
 id="keyword"
 type="text"
 placeholder="タイトル・著者・分類で検索">
 
-<table id="bookTable" border="1">
+
+</section>
+
+
+
+
+<section 
+id="bookList"
+class="book-list">
+
+
+<table id="bookTable">
+
 
 <thead>
 
 <tr>
 
 <th>ID</th>
+
 <th>タイトル</th>
+
 <th>著者</th>
+
 <th>状態</th>
-<th>申請</th>
+
+<th>操作</th>
 
 </tr>
 
 </thead>
 
+
 <tbody>
+
 
 </tbody>
 
+
 </table>
 
+
+</section>
+
+
+</main>
+
+
+
+
+<footer>
+
+<p>
+© 図書館システム
+</p>
+
+</footer>
+
+
+
 <script src="js/books.js"></script>
+
 
 </body>
 
