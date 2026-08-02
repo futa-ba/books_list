@@ -5,10 +5,24 @@ const API =
 async function searchBooks(){
 
 
+const emailElement =
+document.getElementById("email");
+
+
+console.log("email element:", emailElement);
+
+
+if(!emailElement){
+
+    alert("メール入力欄が見つかりません");
+
+    return;
+
+}
+
+
 const email =
-document
-.getElementById("email")
-.value;
+emailElement.value;
 
 
 
