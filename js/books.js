@@ -17,14 +17,13 @@ function loadBooks(){
 
 
 
-function displayBooks(books){
+function displayBooks(books) {
+    console.log("displayBooksが呼ばれました");
+    console.log(books);
 
     allBooks = books;
-
     renderBooks(allBooks);
-
 }
-
 
 
 function renderBooks(books){
