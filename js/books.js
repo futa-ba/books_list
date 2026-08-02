@@ -29,51 +29,110 @@ async function loadBooks(){
 function renderBooks(books){
 
 
-    const tbody =
-        document.querySelector("#bookTable tbody");
+const tbody =
+document.querySelector("#bookTable tbody");
 
 
-    tbody.innerHTML = "";
+tbody.innerHTML="";
 
 
-    books.forEach(book => {
+
+books.forEach(book=>{
 
 
-        tbody.innerHTML += `
+tbody.innerHTML += `
 
-        <tr>
-
-            <td>${book.ID}</td>
-
-            <td>${book.タイトル}</td>
-
-            <td>${book.著者}</td>
-
-            <td>${book.状態}</td>
-
-            <td>
-            ${
-                book.状態 === "貸出可"
-                ?
-                `
-                <button onclick="requestBook('${book.ID}','${book.タイトル}')">
-                貸出申請
-                </button>
-                `
-
-                :
-
-                "貸出中"
-
-            }
-            </td>
-
-        </tr>
-
-        `;
+<tr>
 
 
-    });
+<td data-label="ID">
+
+${book.ID}
+
+</td>
+
+
+
+<td data-label="タイトル">
+
+${book.タイトル}
+
+</td>
+
+
+
+<td data-label="著者">
+
+${book.著者}
+
+</td>
+
+
+
+<td data-label="状態">
+
+<span class="
+status
+${book.状態 === "貸出可" ? "available" : "borrowed"}
+">
+
+${book.状態}
+
+</span>
+
+
+</td>
+
+
+
+<td data-label="操作">
+
+
+${
+book.状態 === "貸出可"
+
+?
+
+`
+
+<button
+
+onclick="requestBook('${book.ID}','${book.タイトル}')"
+
+>
+
+貸出申請
+
+</button>
+
+`
+
+:
+
+`
+
+<span class="disabled">
+
+貸出中
+
+</span>
+
+`
+
+}
+
+
+</td>
+
+
+</tr>
+
+`;
+
+
+
+});
+
 
 }
 
