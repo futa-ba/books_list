@@ -51,6 +51,12 @@ function renderBooks(books){
 
             <td>${book.状態}</td>
 
+            <td>
+            <button onclick="requestBook('${book.ID}')">
+            貸出申請
+            </button>
+            </td>
+
         </tr>
 
         `;
@@ -118,8 +124,23 @@ keyword.addEventListener(
 
     renderBooks(filtered);
 
+    
 
 });
 
 
 loadBooks();
+
+function requestBook(id){
+
+    const formURL =
+    "https://docs.google.com/forms/d/e/1FAIpQLSdJz-D5PXo6L27hHw8u7H2KyERTkmJipUaHMot6yvXhiYEn9g/viewform";
+
+
+    window.open(
+        formURL,
+        "_blank"
+    );
+
+}
+
