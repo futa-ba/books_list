@@ -5,6 +5,8 @@
 
 <meta charset="UTF-8">
 
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>返却ページ</title>
 
 <link rel="stylesheet" href="css/style.css">
@@ -15,7 +17,28 @@
 <body>
 
 
-<h1>返却申請</h1>
+<header class="page-header">
+
+
+<h1>
+🔄 本を返却する
+</h1>
+
+
+<p>
+借りている本を選択して返却できます
+</p>
+
+
+</header>
+
+
+
+
+<main>
+
+
+<section class="return-search">
 
 
 <p>
@@ -30,20 +53,34 @@ placeholder="メールアドレス">
 
 
 <button onclick="searchBooks()">
+
 検索
+
 </button>
 
 
+</section>
 
-<table border="1">
+
+
+
+
+<section class="return-area">
+
+
+<table id="returnTable">
+
 
 <thead>
 
 <tr>
 
 <th>図書ID</th>
+
 <th>タイトル</th>
+
 <th>状態</th>
+
 <th>返却</th>
 
 </tr>
@@ -53,10 +90,29 @@ placeholder="メールアドレス">
 
 <tbody id="returnList">
 
+
 </tbody>
 
 
 </table>
+
+
+</section>
+
+
+
+</main>
+
+
+
+
+<footer>
+
+<p>
+© yamauchi
+</p>
+
+</footer>
 
 
 
