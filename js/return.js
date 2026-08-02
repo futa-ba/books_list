@@ -7,29 +7,30 @@ async function searchBooks(){
 
 
 
-const tbody =
-document.getElementById("returnList");
+    const tbody =
+    document.getElementById("returnList");
 
 
 
-tbody.innerHTML = `
+    tbody.innerHTML = `
 
-<tr>
+    <tr>
 
-<td colspan="4">
+    <td colspan="4">
 
-🔄 借りている本を検索中です...
+    🔄 借りている本を検索中です...
 
-</td>
+    </td>
 
-</tr>
+    </tr>
 
-`;
+    `;
 
 
 
-const emailElement =
-document.getElementById("email");
+
+    const emailElement =
+    document.getElementById("email");
 
 
 
@@ -59,37 +60,123 @@ document.getElementById("email");
 
 
 
-    const response =
-    await fetch(
 
-        API
-        +
-        "?action=returnSearch&email="
-        +
-        encodeURIComponent(email)
-
-    );
+    try{
 
 
+        const response =
+        await fetch(
 
+            API
+            +
+            "?action=returnSearch&email="
+            +
+            encodeURIComponent(email)
 
-    const books =
-    await response.json();
+        );
 
 
 
-
-    const tbody =
-    document.getElementById("returnList");
-
-
-
-    tbody.innerHTML = "";
+        const books =
+        await response.json();
 
 
 
 
-    if(books.length === 0){
+        tbody.innerHTML = "";
+
+
+
+
+        if(books.length === 0){
+
+
+            tbody.innerHTML = `
+
+            <tr>
+
+            <td colspan="4">
+
+            貸出中の本がありません
+
+            </td>
+
+            </tr>
+
+            `;
+
+
+            return;
+
+
+        }
+
+
+
+
+
+        books.forEach(book=>{
+
+
+            tbody.innerHTML += `
+
+
+            <tr>
+
+
+            <td data-label="図書ID">
+
+            ${book[3]}
+
+            </td>
+
+
+
+            <td data-label="タイトル">
+
+            ${book[4]}
+
+            </td>
+
+
+
+            <td data-label="状態">
+
+            ${book[5]}
+
+            </td>
+
+
+
+            <td data-label="返却">
+
+
+            <button onclick="returnBook('${book[3]}')">
+
+            返却
+
+            </button>
+
+
+            </td>
+
+
+
+            </tr>
+
+
+            `;
+
+
+        });
+
+
+
+    }catch(error){
+
+
+        console.error(error);
+
 
 
         tbody.innerHTML = `
@@ -98,82 +185,22 @@ document.getElementById("email");
 
         <td colspan="4">
 
-        貸出中の本がありません
+        ⚠️ 読み込みに失敗しました
 
         </td>
 
         </tr>
 
         `;
-
-
-        return;
 
 
     }
 
 
 
-
-
-    books.forEach(book=>{
-
-
-        tbody.innerHTML += `
-
-
-        <tr>
-
-
-        <td data-label="図書ID">
-
-        ${book[3]}
-
-        </td>
-
-
-
-        <td data-label="タイトル">
-
-        ${book[4]}
-
-        </td>
-
-
-
-        <td data-label="状態">
-
-        ${book[5]}
-
-        </td>
-
-
-
-        <td data-label="返却">
-
-
-        <button onclick="returnBook('${book[3]}')">
-
-        返却
-
-        </button>
-
-
-        </td>
-
-
-
-        </tr>
-
-
-        `;
-
-
-    });
-
-
-
 }
+
+
 
 
 
