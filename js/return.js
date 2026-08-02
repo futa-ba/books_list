@@ -6,8 +6,30 @@ const API =
 async function searchBooks(){
 
 
-    const emailElement =
-    document.getElementById("email");
+
+const tbody =
+document.getElementById("returnList");
+
+
+
+tbody.innerHTML = `
+
+<tr>
+
+<td colspan="4">
+
+🔄 借りている本を検索中です...
+
+</td>
+
+</tr>
+
+`;
+
+
+
+const emailElement =
+document.getElementById("email");
 
 
 
