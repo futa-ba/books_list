@@ -654,3 +654,65 @@ button {
 
 
 }
+
+/* ==========================
+   ホームへ戻るボタン
+========================== */
+
+.back-area{
+
+    text-align:center;
+
+    margin:25px 0;
+
+}
+
+.back-button{
+
+    display:inline-block;
+
+    background:#43a047;
+
+    color:white;
+
+    text-decoration:none;
+
+    padding:12px 28px;
+
+    border-radius:30px;
+
+    font-weight:bold;
+
+    transition:0.3s;
+
+    box-shadow:0 4px 10px rgba(0,0,0,0.15);
+
+}
+
+.back-button:hover{
+
+    background:#2e7d32;
+
+    transform:translateY(-2px);
+
+}
+
+.back-button:active{
+
+    transform:scale(0.98);
+
+}
+
+@media(max-width:600px){
+
+    .back-button{
+
+        width:90%;
+
+        max-width:300px;
+
+        text-align:center;
+
+    }
+
+}
