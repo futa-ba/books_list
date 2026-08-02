@@ -9,18 +9,75 @@ let allBooks = [];
 
 async function loadBooks(){
 
-    const response =
+
+    const tbody =
+    document.querySelector("#bookTable tbody");
+
+
+
+    tbody.innerHTML = `
+
+    <tr>
+
+    <td colspan="6">
+
+    📚 本を読み込み中です...
+
+    </td>
+
+    </tr>
+
+    `;
+
+
+
+
+    try{
+
+
+        const response =
         await fetch(API);
 
 
-    const books =
+
+        const books =
         await response.json();
 
 
-    allBooks = books;
+
+        allBooks = books;
 
 
-    renderBooks(allBooks);
+
+        renderBooks(allBooks);
+
+
+
+    }catch(error){
+
+
+
+        console.error(error);
+
+
+
+        tbody.innerHTML = `
+
+        <tr>
+
+        <td colspan="6">
+
+        ⚠️ 読み込みに失敗しました
+
+        </td>
+
+        </tr>
+
+        `;
+
+
+    }
+
 
 }
 
