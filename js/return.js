@@ -119,16 +119,3 @@ location.reload();
 
 
 }
-console.log("returnBook loaded");
-
-
-function returnBook(bookId){
-
-    console.log("返却ボタン押下", bookId);
-
-
-    alert(
-        "返却ID：" + bookId
-    );
-
-}
