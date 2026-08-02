@@ -14,7 +14,7 @@ console.log("email element:", emailElement);
 
 if(!emailElement){
 
-    alert("メール入力欄が見つかりません。");
+    alert("メール入力欄が見つかりません");
 
     return;
 
@@ -117,5 +117,18 @@ alert(result);
 
 location.reload();
 
+
+}
+console.log("returnBook loaded");
+
+
+function returnBook(bookId){
+
+    console.log("返却ボタン押下", bookId);
+
+
+    alert(
+        "返却ID：" + bookId
+    );
 
 }
