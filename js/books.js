@@ -1,29 +1,27 @@
 const API =
-"https://script.google.com/macros/s/AKfycbzNOlDNrJikjV-D42SV7oY3jzb01t-_yypsv4tWBl6Edh7o7MI_548OD4WDzQXZ6ESiSA/exec";
+"https://script.google.com/macros/s/AKfycbzkFmSxSPr4rH6n4GBlyXJKHijnXnjoldKWqI_a6HfF1y527tFFOvqCKTxq0Vu-g3AMzQ/exec";
 
 
 let allBooks = [];
 
 
-function loadBooks(){
+async function loadBooks(){
 
-    const script = document.createElement("script");
-
-    script.src = API + "?callback=displayBooks";
-
-    document.body.appendChild(script);
-
-}
+    const response =
+        await fetch(API);
 
 
+    const books =
+        await response.json();
 
-function displayBooks(books) {
-    console.log("displayBooksが呼ばれました");
-    console.log(books);
 
     allBooks = books;
+
+
     renderBooks(allBooks);
+
 }
+
 
 
 function renderBooks(books){
@@ -99,9 +97,17 @@ keyword.addEventListener(
 
 
             return (
-                title.includes(text) ||
-                author.includes(text) ||
+
+                title.includes(text)
+
+                ||
+
+                author.includes(text)
+
+                ||
+
                 category.includes(text)
+
             );
 
 
@@ -112,3 +118,6 @@ keyword.addEventListener(
 
 
 });
+
+
+loadBooks();
